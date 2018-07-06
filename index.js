@@ -47,7 +47,7 @@ bot.on('start', function() {
 
                     //
                     
-                    //if(currenthours == 9 && currentMinute == 0 && currentSecond == 0){
+                    if(currenthours == 9 && currentMinute == 0 && currentSecond == 0){
                         var randomIndex = Math.floor(Math.random() * (waitingList.length));
                         var selectedUser = waitingList[randomIndex]
                         var selectedUserId = waitingList[randomIndex]["id"]
@@ -55,7 +55,7 @@ bot.on('start', function() {
                         doneList.push(selectedUser);   
                         waitingList.splice(randomIndex, 1);
                         bot.postMessageToChannel(channelName, "Kahve Sırası sende sevgili <@" + selectedUserId + ">! :coffin: \nKahve olana kadar diğer arkadaşlar code review yapabilir mi :codereview:", params);     
-                    //}
+                    }
             }, 1000);
 
     });
