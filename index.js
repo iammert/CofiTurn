@@ -2,7 +2,7 @@ var SlackBot = require('slackbots');
 
 // create a bot
 var bot = new SlackBot({
-    token: 'xoxb-393417128243-393304516052-uAIujoUnayFUDvVikRqPlK9c', 
+    token: 'TOKEN_HERE', 
     name: 'Cofi Pug'
 });
 
