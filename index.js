@@ -2,7 +2,7 @@ var SlackBot = require('slackbots');
 
 // create a bot
 var bot = new SlackBot({
-    token: 'TOKEN_HERE', 
+  token: 'xoxb-393417128243-393304516052-uAIujoUnayFUDvVikRqPlK9c',
     name: 'Cofi Pug'
 });
 
@@ -14,7 +14,7 @@ var coffeeBotId = "UBK8YF61J"
 
 var messagesMap = ["tamam", "yap", "ok"]
 
-var channelName = "CHANNEL_NAME_HERE"
+var channelName = "ToastedPugs"
 
 bot.on('start', function() {
     // more information about additional params https://api.slack.com/methods/chat.postMessage
@@ -38,6 +38,9 @@ bot.on('start', function() {
                     var currenthours = date.getHours();
                     var currentMinute = date.getMinutes();
                     var currentSecond = date.getSeconds();
+
+                    var dayOfWeek = date.getDay();
+                    var isWeekend = (dayOfWeek === 6) || (dayOfWeek === 0);
                     
                     //clear data
                     if(waitingList.length === 0){
@@ -47,7 +50,7 @@ bot.on('start', function() {
 
                     //
                     
-                    if(currenthours == 9 && currentMinute == 0 && currentSecond == 0){
+                    if(!isWeekend && currenthours == 9 && currentMinute == 0 && currentSecond == 0){
                         var randomIndex = Math.floor(Math.random() * (waitingList.length));
                         var selectedUser = waitingList[randomIndex]
                         var selectedUserId = waitingList[randomIndex]["id"]
